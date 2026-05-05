@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #121212;
+  --color-card: #ffffff;
+  --color-card-foreground: #121212;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #121212;
+  --color-primary: hsl(217 91% 60%);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: hsl(0 0% 95%);
+  --color-secondary-foreground: #121212;
+  --color-muted: hsl(0 0% 95%);
+  --color-muted-foreground: hsl(0 0% 40%);
+  --color-accent: hsl(260 90% 56%);
+  --color-accent-foreground: #ffffff;
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: #ffffff;
+  --color-border: hsl(0 0% 90%);
+  --color-input: hsl(0 0% 90%);
+  --color-ring: hsl(217 91% 60%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --color-background: #121212;
+  --color-foreground: #fafafa;
+  --color-card: #1f1f1f;
+  --color-card-foreground: #fafafa;
+  --color-popover: #1f1f1f;
+  --color-popover-foreground: #fafafa;
+  --color-primary: hsl(217 91% 60%);
+  --color-primary-foreground: #121212;
+  --color-secondary: #333333;
+  --color-secondary-foreground: #fafafa;
+  --color-muted: #404040;
+  --color-muted-foreground: hsl(0 0% 60%);
+  --color-accent: hsl(260 90% 56%);
+  --color-accent-foreground: #fafafa;
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: #121212;
+  --color-border: #404040;
+  --color-input: #404040;
+  --color-ring: hsl(260 90% 56%);
+}
+
+@layer base {
+  html {
+    @apply bg-background;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-lg;
+  }
+  
+  .glassmorphism-dark {
+    @apply backdrop-blur-md bg-slate-950/40 border border-slate-700/30 rounded-lg;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+  
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16 lg:py-32;
+  }
+}
