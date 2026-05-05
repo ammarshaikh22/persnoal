@@ -97,7 +97,7 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-foreground/50 text-sm">
-            &copy; {currentYear} Alex Developer. All rights reserved.
+            &copy; {currentYear} MAS Developer. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0 text-sm text-foreground/50">
             <Link href="#" className="hover:text-foreground transition-colors">
