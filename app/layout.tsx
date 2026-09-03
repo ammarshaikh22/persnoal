@@ -38,6 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+       <head>
+       <meta name="google-adsense-account" content="ca-pub-6423446878232459"/>
+      </head>
       <body className="font-sans antialiased bg-background text-foreground">
         <Navigation />
         {children}
