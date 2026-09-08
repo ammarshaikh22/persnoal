@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
@@ -38,13 +40,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-       <head>
-       <meta name="google-adsense-account" content="ca-pub-6423446878232459"/>
+      <head>
+        {/* Google AdSense */}
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-6423446878232459"
+        />
       </head>
+
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-LE9WSZ24BL"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-LE9WSZ24BL');
+        `}
+      </Script>
+
       <body className="font-sans antialiased bg-background text-foreground">
         <Navigation />
+
         {children}
+
         <Footer />
+
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
