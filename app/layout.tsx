@@ -41,6 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+      <meta 
+      name="strix-verification" 
+      content="strix-verify-079f44b3814b78402505b97785814830"
+      />
         {/* Google AdSense */}
         <meta
           name="google-adsense-account"
