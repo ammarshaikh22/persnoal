@@ -1,0 +1,85 @@
+.pl {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform, opacity;
+  animation: pl-failsafe 0s linear 3.2s forwards;
+}
+@keyframes pl-failsafe {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.pl-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 55%, #0d1a13 0, #050505 62%);
+  opacity: 0;
+}
+.pl-in {
+  position: relative;
+  text-align: center;
+  padding: 0 6vw;
+}
+.pl-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+.pl-title {
+  display: block;
+  font-size: clamp(2.2rem, 8vw, 6rem);
+  color: #f5f5f5;
+  will-change: transform;
+}
+.pl-sub {
+  margin-top: 18px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  opacity: 0;
+}
+.pl-track {
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  bottom: 14vh;
+  height: 1px;
+  background: #333;
+}
+.pl-bar {
+  position: absolute;
+  inset: 0;
+  background: #00ff85;
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 12px rgba(0, 255, 133, 0.55);
+  will-change: transform;
+}
+.pl-meta {
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  bottom: calc(14vh - 32px);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #8a8a8a;
+  text-transform: uppercase;
+}
+.pl-pct {
+  color: #f5f5f5;
+  font-variant-numeric: tabular-nums;
+}
+html.is-loading {
+  overflow: hidden;
+}
