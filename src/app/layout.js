@@ -1,5 +1,6 @@
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 import localFont from "next/font/local";
 import CustomCursor from "@/components/CustomCursor";
 import Header from "@/components/Header";
@@ -113,6 +114,7 @@ export default function Layout({ children }) {
           <div className="vig" aria-hidden="true" />
           <Header />
           {children}
+            <Analytics />
           <Footer />
         </SmoothScroll>
       </body>
